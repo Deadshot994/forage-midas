@@ -17,14 +17,20 @@ public class TransactionRecord {
 
     private Double amount;
 
+    private Double incentive;
+
     // Required by JPA
     protected TransactionRecord() {
     }
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, Double amount) {
+    public TransactionRecord(UserRecord sender,
+                             UserRecord recipient,
+                             Double amount,
+                             Double incentive) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
     public Long getId() {
@@ -41,5 +47,9 @@ public class TransactionRecord {
 
     public Double getAmount() {
         return amount;
+    }
+
+    public Double getIncentive() {
+        return incentive;
     }
 }
